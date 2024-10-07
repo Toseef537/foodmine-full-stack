@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000"
+const BASE_URL = "https://foodmine-backend-nodejs.vercel.app";
 export const FOODS_URL = BASE_URL + "/api/foods";
 export const ADD_FOOD_URL = FOODS_URL + "/add-food";
 export const FOODS_TAGS_URL = FOODS_URL + "/tags";
