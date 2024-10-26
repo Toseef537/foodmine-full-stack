@@ -42,17 +42,19 @@ export class HomeComponent {
         })
       } 
       else {
-        if(this.isAuth){
-          activatedRoute.data.subscribe((res)=>{
-            console.log('data from resolvers',res);
-            this.foodItems=res['homeData'].homeData;
-          })
-        }else{
-          this.#homeService.getAllFoodItems().subscribe((foods)=>{
-            this.foodItems=foods;
-          })
-        }
-        
+        // if(this.isAuth){
+        //   activatedRoute.data.subscribe((res)=>{
+        //     console.log('data from resolvers',res);
+        //     this.foodItems=res['homeData'].homeData;
+        //   })
+        // }else{
+        //   this.#homeService.getAllFoodItems().subscribe((foods)=>{
+        //     this.foodItems=foods;
+        //   })
+        // }
+        this.#homeService.getAllFoodItems().subscribe((foods)=>{
+          this.foodItems=foods;
+        })
       }
     })
   }

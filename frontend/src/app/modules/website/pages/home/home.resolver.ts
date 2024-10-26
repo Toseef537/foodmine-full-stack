@@ -11,13 +11,15 @@ export const homeResolver: ResolveFn<any> = (route, state) => {
  const cartService:CartService=inject(CartService);
  const userService:UserService=inject(UserService);
  const isAuth=userService.currentUser.token;
- if(isAuth){
-  return forkJoin({
-    homeData:homeService.getAllFoodItems(),
-    currentCart:cartService.loadCartFromBackend()
-   })
- }else{
-   return homeService.getAllFoodItems()
- }
+//  if(isAuth){
+//   return forkJoin({
+//     homeData:homeService.getAllFoodItems(),
+//     currentCart:cartService.loadCartFromBackend()
+//    })
+//  }else{
+//    return homeService.getAllFoodItems()
+//  }
+ return homeService.getAllFoodItems()
+
 
 };
